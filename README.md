@@ -39,15 +39,15 @@ I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/p
  From what I've researched, ESP-IDF's USB support is incomplete.   
  For example, the Logitech C615 works with Linux, but not with ESP-IDF.   
  I tested with these cameras.   
- 1.Logitech C270
- 1.Logitech C615
- 1.Logitech QuickCam Pro 9000
- 1.PAPALOOK AF925
- 1.SANWA Supply CMS-V30SETBK(Very old model)
+ - Logitech C270
+ - Logitech C615
+ - Logitech QuickCam Pro 9000
+ - PAPALOOK AF925
+ - Microdia(Very old model)
  ___It is very hard work to find a camera that works with ESP-IDF.___   
  On [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc) document says that these cameras work with ESP-IDF.   
- 1.Logitech C980
- 1.CANYON CNE-CWC2
+ - Logitech C980
+ - CANYON CNE-CWC2
  When usb support provided by ESP-IDF is updated, there is possible that this limitation may be removed.   
  Detail is [here](https://github.com/nopnop2002/esp-idf-video-streaming/issues).   
 
