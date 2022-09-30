@@ -6,7 +6,7 @@ This example demonstrates how to:
 - Stream the video over WiFi by hosting a HTTP server.
 - Supports plugging and unplugging USB cameras.   
 
-The example enumerates connected camera, negotiates selected resolution together with FPS and starts capturing video.   
+This example enumerates the attached camera descriptors, negotiates the selected resolution and FPS, and starts capturing video.   
 
 I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc).   
 
