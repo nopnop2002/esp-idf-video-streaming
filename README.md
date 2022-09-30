@@ -84,7 +84,7 @@ idf.py flash monitor
 
 ![config-app-1](https://user-images.githubusercontent.com/6020549/193183047-2afea305-7553-4d34-92e8-ad3cecb8cfe2.jpg)
 
-Some capera support 640x480 streaming. Runs at 15FPS.   
+Some camera support 640x480 streaming. Runs at 15FPS.   
 ![config-app-2](https://user-images.githubusercontent.com/6020549/193183048-51907f8d-6438-41e7-9299-f19293b5d8e8.jpg)
 
 
