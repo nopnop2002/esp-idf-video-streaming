@@ -13,7 +13,7 @@ I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/p
 
 # Change from official example
 
-- Changed WiFi connection by example_connect to WiFi connection by handler.   
+- Changed Network connection by example_connect to WiFi connection by handler.   
 
 - Supported VideoStreaming format of UncompressedFormat.   
  This allows you can use the Logitech C270.   
