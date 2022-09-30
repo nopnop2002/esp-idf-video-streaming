@@ -95,7 +95,7 @@ Some camera support 640x480 streaming. Runs at 15FPS.
 - Connect the USB camera at this timing.   
 ![WaitingForDevice](https://user-images.githubusercontent.com/6020549/193183218-1a2100c8-7b51-444d-953e-cf7b8acd3313.jpg)
 
-- For available USB cameras, the device information will be displayed.      
+- For available USB cameras, device information will be displayed and video streaming will begin.   
 ![StartStreaming](https://user-images.githubusercontent.com/6020549/193183252-fa3473ef-b0b4-4639-b01f-e7ce8f497583.jpg)
 
 - For unavailable USB cameras, you will see an error like this.   
