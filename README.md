@@ -24,32 +24,34 @@ I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/p
 
 # Hardware Required
 
-- ESP32-S2/ESP32-S3
- This example requires any ESP32-S2 or ESP32-S3 with external PSRAM and exposed USB connector attached to USB camera.   
- ESP module without external PSRAM will fail to initialize.   
- I used this board.   
- ![esp32-s3-1](https://user-images.githubusercontent.com/6020549/193182915-ac4dbd55-b3ee-4327-b64d-d055e3774b7d.JPG)
+## ESP32-S2/ESP32-S3
+This example requires any ESP32-S2 or ESP32-S3 with external PSRAM and exposed USB connector attached to USB camera.   
+ESP module without external PSRAM will fail to initialize.   
+I used this board.   
+![esp32-s3-1](https://user-images.githubusercontent.com/6020549/193182915-ac4dbd55-b3ee-4327-b64d-d055e3774b7d.JPG)
 
-- Stable power supply
- USB cameras consume a lot of electricity.   
- If the power supplied to the USB port is insufficient, the camera will not operate and ESP32 resets.  
+## Stable power supply
+USB cameras consume a lot of electricity.   
+If the power supplied to the USB port is insufficient, the camera will not operate and ESP32 resets.  
 
-- USB camera with UVC support
- [Here](https://www.freebsd.org/cgi/man.cgi?query=uvc&sektion=4&manpath=freebsd-release-ports) is a list of USB cameras that support UVC that work with FreeBSD.   
- From what I've researched, ESP-IDF's USB support is incomplete.   
- For example, the Logitech C615 works with Linux, but not with ESP-IDF.   
- I tested with these cameras.   
- - Logitech C270
- - Logitech C615
- - Logitech QuickCam Pro 9000
- - PAPALOOK AF925
- - Microdia(Very old model)
- ___It is very hard work to find a camera that works with ESP-IDF.___   
- On [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc) document says that these cameras work with ESP-IDF.   
- - Logitech C980
- - CANYON CNE-CWC2
- When usb support provided by ESP-IDF is updated, there is possible that this limitation may be removed.   
- Detail is [here](https://github.com/nopnop2002/esp-idf-video-streaming/issues).   
+## USB camera with UVC support
+[Here](https://www.freebsd.org/cgi/man.cgi?query=uvc&sektion=4&manpath=freebsd-release-ports) is a list of USB cameras that support UVC that work with FreeBSD.   
+From what I've researched, ESP-IDF's USB support is incomplete.   
+For example, the Logitech C615 works with Linux, but not with ESP-IDF.   
+I tested with these cameras.   
+- Logitech C270   
+- Logitech C615   
+- Logitech QuickCam Pro 9000   
+- PAPALOOK AF925   
+- Microdia(Very old model)   
+
+___It is very hard work to find a camera that works with ESP-IDF.___   
+On [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc) document says that these cameras work with ESP-IDF.   
+- Logitech C980
+- CANYON CNE-CWC2
+
+When usb support provided by ESP-IDF is updated, there is possible that this limitation may be removed.   
+Detail is [here](https://github.com/nopnop2002/esp-idf-video-streaming/issues).   
 
 # Software Required
 esp-idf v5.0 or later.   
