@@ -50,7 +50,7 @@ On [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/
 - Logitech C980
 - CANYON CNE-CWC2
 
-When usb support provided by ESP-IDF is updated, there is possible that this limitation may be removed.   
+When usb support provided by ESP-IDF is updated, this issues may eliminate issue.   
 Detail is [here](https://github.com/nopnop2002/esp-idf-video-streaming/issues).   
 
 # Software Required
