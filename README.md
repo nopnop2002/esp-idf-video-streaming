@@ -44,6 +44,7 @@ I tested with these cameras.
 - Logitech QuickCam Pro 9000 -> Fail   
 - PAPALOOK AF925 -> Fail   
 - Microdia(Very old model) -> Success   
+- Microsoft LifeCam Cinema -> Success   
 
 ___It is very hard work to find a camera that works with ESP-IDF.___   
 On [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc) document says that these cameras work with ESP-IDF.   
