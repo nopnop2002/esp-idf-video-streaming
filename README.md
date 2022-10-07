@@ -2,7 +2,8 @@
 Capture video from a USB camera using ESP-IDF.   
 
 This example demonstrates how to:   
-- Capture video from a USB camera using the libuvc library.
+- Capture video from a USB camera using the USB Host UVC Dreiver.
+ https://components.espressif.com/components/espressif/usb_host_uvc   
 - Stream the video over WiFi by hosting a HTTP server.
 - Supports plugging and unplugging USB cameras.   
 
