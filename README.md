@@ -48,7 +48,7 @@ I tested with these cameras.
 - Microsoft LifeCam Cinema -> Success   
 
 ___It is very hard work to find a camera that works with ESP-IDF.___   
-On [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc) document says that these cameras work with ESP-IDF.   
+On [this](https://components.espressif.com/components/espressif/usb_host_uvc) document says that these cameras work with ESP-IDF.   
 - Logitech C980
 - CANYON CNE-CWC2
 
