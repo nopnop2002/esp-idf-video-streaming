@@ -276,28 +276,32 @@ void usb_camera(void *pvParameters) {
 			}
 		}
 
-		// Limitations
-#if CONFIG_CAPTURE_640x480
-		ESP_LOGI(TAG, "Enable 640x480 width=%d height=%d fps=%d", width, height, fps);
+#if CONFIG_SIZE_640x480
+		ESP_LOGW(TAG, "FRAME SIZE=640x480 FRAME RATE=%d", CONFIG_FRAME_RATE);
+		width = 640;
+		height = 480;
+		fps = CONFIG_FRAME_RATE;
+#elif CONFIG_SIZE_320x240
+		ESP_LOGW(TAG, "FRAME SIZE=320x240 FRAME RATE=%d", CONFIG_FRAME_RATE);
+		width = 320;
+		height = 240;
+		fps = CONFIG_FRAME_RATE;
+#elif CONFIG_SIZE_160x120
+		ESP_LOGW(TAG, "FRAME SIZE=160x120 FRAME RATE=%d", CONFIG_FRAME_RATE);
+		width = 160;
+		height = 120;
+		fps = CONFIG_FRAME_RATE;
+#else
 		if (width >= 640 || height >= 480) {
 			width = 640;
 			height = 480;
 			if (fps > FPS_15) {
-				ESP_LOGW(TAG, "FPS changed from %d to %d", fps, FPS_15);
+				ESP_LOGW(TAG, "Frame rate changed from %d to %d", fps, FPS_15);
 				fps = FPS_15;
 			}
 		}
-#else
-		ESP_LOGI(TAG, "Disable 640x480 width=%d height=%d fps=%d", width, height, fps);
-		if (width >= 640 || height >= 480) {
-			width = WIDTH;
-			height = HEIGHT;
-		}
-		if (fps > FPS_30) {
-			ESP_LOGW(TAG, "FPS changed from %d to %d", fps, FPS_30);
-			fps = FPS_30;
-		}
 #endif
+
 		ESP_LOGI(TAG, "format=%d width=%d height=%d fps=%d", format, width, height, fps);
 
 		// Negotiate stream profile

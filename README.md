@@ -82,10 +82,10 @@ idf.py flash monitor
 
 ![config-main](https://user-images.githubusercontent.com/6020549/193183008-7114e7d5-672b-4e51-9afd-84af7e5b7aa1.jpg)
 
-![config-app-1](https://user-images.githubusercontent.com/6020549/193183047-2afea305-7553-4d34-92e8-ad3cecb8cfe2.jpg)
+![config-app-1](https://user-images.githubusercontent.com/6020549/194474315-7cdc917a-ba5b-47d8-a0a0-673f3a51644f.jpg)
 
-Some camera support 640x480 streaming. Runs at 15FPS.   
-![config-app-2](https://user-images.githubusercontent.com/6020549/193183048-51907f8d-6438-41e7-9299-f19293b5d8e8.jpg)
+Some cameras need to change frame size and rate.   
+![config-app-2](https://user-images.githubusercontent.com/6020549/194474320-f08c9f96-81e5-4423-9b1e-a568ec1fe34e.jpg)
 
 
 # How to use

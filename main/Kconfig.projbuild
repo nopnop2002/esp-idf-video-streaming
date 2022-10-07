@@ -24,10 +24,46 @@ menu "Application Configuration"
 		help
 			mDNS Hostname to use
 
-	config CAPTURE_640x480
-		bool "Capture at 640x480 if possible"
+	config MANUAL_SETTING
+		bool "Manual Setting"
 		default n
 		help
-			Capture at 640x480 if possible.
+			Enable Manual Setting.
+
+	choice FRAME_SIZE
+		depends on MANUAL_SETTING
+		prompt "Select Frame Size"
+		default SIZE_320x240
+		help
+			Select Frame Size.
+		config SIZE_640x480
+			bool "640x480"
+			help
+				640x480.
+		config SIZE_320x240
+			bool "320x240"
+			help
+				320x640.
+		config SIZE_160x120
+			bool "160x120"
+			help
+				160x120.
+	endchoice
+
+	config FRAME_RATE
+		depends on SIZE_640x480
+		int "Frame Rate"
+		range 0 15
+		default 15
+		help
+			Set the Frame Rate.
+
+	config FRAME_RATE
+		depends on SIZE_320x240 || SIZE_160x120
+		int "Frame Rate"
+		range 0 30
+		default 30
+		help
+			Set the Frame Rate.
 
 endmenu
