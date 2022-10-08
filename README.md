@@ -112,3 +112,6 @@ You can use mDNS instead of ESP32 IP addresses.
 - At 640x480, 15FPS is the maximum rate.
 
 
+# Using ESP32-CAM development board
+You can use [this](https://github.com/espressif/esp-iot-solution/tree/master/examples/camera/video_stream_server).
+
