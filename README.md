@@ -113,5 +113,5 @@ You can use mDNS instead of ESP32 IP addresses.
 
 
 # Using ESP32-CAM development board
-You can use [this](https://github.com/espressif/esp-iot-solution/tree/master/examples/camera/video_stream_server).
+You can use [this](https://github.com/espressif/esp-iot-solution/tree/master/examples/camera/video_stream_server) repository.
 
