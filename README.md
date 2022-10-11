@@ -46,6 +46,7 @@ I tested with these cameras.
 - PAPALOOK AF925 -> Fail   
 - Microdia(Very old model) -> Success   
 - Microsoft LifeCam Cinema -> Success   
+- Microsoft LifeCam HD3000 -> Success   
 
 ___It is very hard work to find a camera that works with ESP-IDF.___   
 On [this](https://components.espressif.com/components/espressif/usb_host_uvc) document says that these cameras work with ESP-IDF.   
