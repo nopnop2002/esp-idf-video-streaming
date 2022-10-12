@@ -40,6 +40,10 @@ menu "Application Configuration"
 			bool "640x480"
 			help
 				640x480.
+		config SIZE_352x288
+			bool "352x288"
+			help
+				352x288.
 		config SIZE_320x240
 			bool "320x240"
 			help
@@ -59,7 +63,7 @@ menu "Application Configuration"
 			Set the Frame Rate.
 
 	config FRAME_RATE
-		depends on SIZE_320x240 || SIZE_160x120
+		depends on SIZE_352x288 || SIZE_320x240 || SIZE_160x120
 		int "Frame Rate"
 		range 0 30
 		default 30

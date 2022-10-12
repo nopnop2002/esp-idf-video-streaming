@@ -281,6 +281,11 @@ void usb_camera(void *pvParameters) {
 		width = 640;
 		height = 480;
 		fps = CONFIG_FRAME_RATE;
+#elif CONFIG_SIZE_352x288
+		ESP_LOGW(TAG, "FRAME SIZE=352x288 FRAME RATE=%d", CONFIG_FRAME_RATE);
+		width = 352;
+		height = 288;
+		fps = CONFIG_FRAME_RATE;
 #elif CONFIG_SIZE_320x240
 		ESP_LOGW(TAG, "FRAME SIZE=320x240 FRAME RATE=%d", CONFIG_FRAME_RATE);
 		width = 320;
@@ -300,6 +305,13 @@ void usb_camera(void *pvParameters) {
 				fps = FPS_15;
 			}
 		}
+#endif
+
+#if 0
+		// Force setting
+		width = 352;
+		height = 288;
+		fps = 30;
 #endif
 
 		ESP_LOGI(TAG, "format=%d width=%d height=%d fps=%d", format, width, height, fps);
