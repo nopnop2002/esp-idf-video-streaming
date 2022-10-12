@@ -45,6 +45,7 @@ I tested with these cameras.
 - Logitech QuickCam Pro 9000 -> Fail   
 - PAPALOOK AF925 -> Fail   
 - Microdia(Very old model) -> Success   
+- Microdia MSI Starcam Racer -> Success   
 - Microsoft LifeCam Cinema -> Success   
 - Microsoft LifeCam HD3000 -> Success   
 
