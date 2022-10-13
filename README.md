@@ -46,6 +46,7 @@ I tested with these cameras.
 - PAPALOOK AF925 -> Fail   
 - Microdia(Very old model) -> Success   
 - Microdia MSI Starcam Racer -> Success   
+- Microsoft LifeCam NX6000 -> Fail   
 - Microsoft LifeCam Cinema -> Success   
 - Microsoft LifeCam HD3000 -> Success   
 - Microsoft LifeCam HD5000 -> Success   
