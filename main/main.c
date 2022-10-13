@@ -37,9 +37,7 @@ static EventGroupHandle_t s_wifi_event_group;
 
 static int s_retry_num = 0;
 
-static void event_handler(void* arg, esp_event_base_t event_base,
-																int32_t event_id
-, void* event_data)
+static void event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data)
 {
 	if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
 		esp_wifi_connect();
@@ -151,7 +149,6 @@ void initialise_mdns(void)
 #endif
 }
 
-void tcp_server(void *pvParameters);
 void http_server(void *pvParameters);
 void usb_camera(void *pvParameters);
 
@@ -175,16 +172,13 @@ void app_main()
 	xRingbuffer = xRingbufferCreate(100000, RINGBUF_TYPE_BYTEBUF);
 	configASSERT( xRingbuffer );
 
-	// Create TCP Server Task
-	//xTaskCreate(tcp_server, "TCP", 1024*4, NULL, 10, NULL);
-
-    // Create HTTP Server Task 
-    char cparam0[64];
-    esp_netif_ip_info_t ip_info;
-    ESP_ERROR_CHECK(esp_netif_get_ip_info(esp_netif_get_handle_from_ifkey("WIFI_STA_DEF"), &ip_info));
-    sprintf(cparam0, IPSTR, IP2STR(&ip_info.ip));
-    ESP_LOGI(TAG, "cparam0=[%s]", cparam0);
-    xTaskCreate(http_server, "HTTP", 1024*6, (void *)cparam0, 2, NULL);
+	// Create HTTP Server Task 
+	char cparam0[64];
+	esp_netif_ip_info_t ip_info;
+	ESP_ERROR_CHECK(esp_netif_get_ip_info(esp_netif_get_handle_from_ifkey("WIFI_STA_DEF"), &ip_info));
+	sprintf(cparam0, IPSTR, IP2STR(&ip_info.ip));
+	ESP_LOGI(TAG, "cparam0=[%s]", cparam0);
+	xTaskCreate(http_server, "HTTP", 1024*6, (void *)cparam0, 2, NULL);
 	vTaskDelay(100);
 
 	// Create USB Camera Task

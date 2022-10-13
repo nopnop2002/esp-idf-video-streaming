@@ -309,9 +309,9 @@ void usb_camera(void *pvParameters) {
 
 #if 0
 		// Force setting
-		width = 352;
-		height = 288;
-		fps = 30;
+		width = 160;
+		height = 120;
+		fps = 10;
 #endif
 
 		ESP_LOGI(TAG, "format=%d width=%d height=%d fps=%d", format, width, height, fps);
