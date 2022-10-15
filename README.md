@@ -17,7 +17,7 @@ I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/p
 - Changed Network connection by example_connect to WiFi connection by handler.   
 
 - Supported VideoStreaming format of UncompressedFormat.   
- This allows you can use the Logitech C270.   
+ This will allow you to use Logitech C270 and Microsoft LifeCam.   
  Conversion from UVC_FRAME_FORMAT_YUYV to JPEG used [this](https://github.com/espressif/esp32-camera/blob/master/conversions/to_jpg.cpp).   
 
 - Change from TCP transmission to HTTP transmission.   
