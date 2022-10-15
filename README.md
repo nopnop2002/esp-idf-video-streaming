@@ -36,11 +36,11 @@ USB cameras consume a lot of electricity.
 If the power supplied to the USB port is insufficient, the camera will not operate and ESP32 resets.  
 
 ## USB Type-A Femail connector
-Breakout boards are available from AliExpress and eBay.   
+Breakout boards are available from AliExpress or eBay.   
 
 ## USB camera with UVC support
 [Here](https://www.freebsd.org/cgi/man.cgi?query=uvc&sektion=4&manpath=freebsd-release-ports) is a list of USB cameras that support UVC that work with FreeBSD.   
-From what I've researched, ESP-IDF's USB support is incomplete.   
+From what I've researched, ESP-IDF has limited USB support.   
 For example, the Logitech C615 works with Linux, but not with ESP-IDF.   
 I tested with these cameras.   
 - Logitech C270 -> Success   
