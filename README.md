@@ -35,6 +35,8 @@ I used this board.
 USB cameras consume a lot of electricity.   
 If the power supplied to the USB port is insufficient, the camera will not operate and ESP32 resets.  
 
+## USB Type-A Femail connector
+
 ## USB camera with UVC support
 [Here](https://www.freebsd.org/cgi/man.cgi?query=uvc&sektion=4&manpath=freebsd-release-ports) is a list of USB cameras that support UVC that work with FreeBSD.   
 From what I've researched, ESP-IDF's USB support is incomplete.   
