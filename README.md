@@ -9,7 +9,7 @@ This example demonstrates how to:
 
 This example enumerates the attached camera descriptors, negotiates the selected resolution and FPS, and starts capturing video.   
 
-I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc).   
+I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/peripherals/usb/host/uvc) official example.   
 
 
 # Change from official example
