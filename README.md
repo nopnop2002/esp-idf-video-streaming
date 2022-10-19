@@ -96,9 +96,8 @@ idf.py flash monitor
 
 ![config-app-1](https://user-images.githubusercontent.com/6020549/194474315-7cdc917a-ba5b-47d8-a0a0-673f3a51644f.jpg)
 
-Some cameras need to change frame size and rate.   
-![config-app-2](https://user-images.githubusercontent.com/6020549/194474320-f08c9f96-81e5-4423-9b1e-a568ec1fe34e.jpg)
-
+Some cameras need to change frame size, frame rate and frame format.   
+![config-app-2](https://user-images.githubusercontent.com/6020549/196589375-78b6ac94-02a5-49a1-b31d-04cd620a05cd.jpg)
 
 # How to use
 

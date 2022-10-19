@@ -307,11 +307,20 @@ void usb_camera(void *pvParameters) {
 		}
 #endif
 
+#if CONFIG_FORMAT_YUY2
+		ESP_LOGW(TAG, "FRAME FORMAT=YUYV");
+		format = UVC_FRAME_FORMAT_YUYV;
+#elif CONFIG_FORMAT_MJPG
+		ESP_LOGW(TAG, "FRAME FORMAT=MJPEG");
+		format = UVC_FRAME_FORMAT_MJPEG;
+#endif
+
 #if 0
 		// Force setting
-		width = 160;
-		height = 120;
+		width = 640;
+		height = 480;
 		fps = 10;
+		format = UVC_FRAME_FORMAT_MJPEG;
 #endif
 
 		ESP_LOGI(TAG, "format=%d width=%d height=%d fps=%d", format, width, height, fps);

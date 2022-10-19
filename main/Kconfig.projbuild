@@ -70,4 +70,20 @@ menu "Application Configuration"
 		help
 			Set the Frame Rate.
 
+	choice FRAME_FORMAT
+		depends on MANUAL_SETTING
+		prompt "Select Frame Format"
+		default FORMAT_YUY2
+		help
+			Select Frame Format.
+		config FORMAT_YUY2
+			bool "UncompressedFormat"
+			help
+				UncompressedFormat.
+		config FORMAT_MJPG
+			bool "MJPEGFormat"
+			help
+				MJPEGFormat.
+	endchoice
+
 endmenu
