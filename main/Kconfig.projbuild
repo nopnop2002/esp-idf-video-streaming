@@ -31,8 +31,8 @@ menu "Application Configuration"
 			Enable Manual Setting.
 
 	choice FRAME_SIZE
-		depends on MANUAL_SETTING
 		prompt "Select Frame Size"
+		depends on MANUAL_SETTING
 		default SIZE_320x240
 		help
 			Select Frame Size.
@@ -54,25 +54,9 @@ menu "Application Configuration"
 				160x120.
 	endchoice
 
-	config FRAME_RATE
-		depends on SIZE_640x480
-		int "Frame Rate"
-		range 0 15
-		default 15
-		help
-			Set the Frame Rate.
-
-	config FRAME_RATE
-		depends on SIZE_352x288 || SIZE_320x240 || SIZE_160x120
-		int "Frame Rate"
-		range 0 30
-		default 30
-		help
-			Set the Frame Rate.
-
 	choice FRAME_FORMAT
-		depends on MANUAL_SETTING
 		prompt "Select Frame Format"
+		depends on MANUAL_SETTING
 		default FORMAT_YUY2
 		help
 			Select Frame Format.
@@ -85,5 +69,21 @@ menu "Application Configuration"
 			help
 				MJPEGFormat.
 	endchoice
+
+	config FRAME_RATE
+		int "Frame Rate"
+		depends on SIZE_640x480
+		range 0 15
+		default 15
+		help
+			Set the Frame Rate.
+
+	config FRAME_RATE
+		int "Frame Rate"
+		depends on SIZE_352x288 || SIZE_320x240 || SIZE_160x120
+		range 0 30
+		default 30
+		help
+			Set the Frame Rate.
 
 endmenu
