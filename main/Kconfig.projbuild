@@ -80,7 +80,7 @@ menu "Application Configuration"
 
 	config FRAME_RATE
 		int "Frame Rate"
-		depends on SIZE_352x288 || SIZE_320x240 || SIZE_160x120
+		depends on !SIZE_640x480
 		range 0 30
 		default 30
 		help
