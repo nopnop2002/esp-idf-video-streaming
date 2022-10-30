@@ -2,7 +2,7 @@
 Capture video from a USB camera using ESP-IDF.   
 
 This example demonstrates how to:   
-- Capture video from a USB camera using the USB Host UVC Dreiver.
+- Capture video from a USB camera using the USB Host UVC Driver.
  https://components.espressif.com/components/espressif/usb_host_uvc   
 - Stream videos over WiFi using the built-in HTTP server.   
 - Supports plugging and unplugging USB cameras.   
