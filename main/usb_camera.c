@@ -256,7 +256,7 @@ void usb_camera(void *pvParameters) {
 			ESP_LOGI(TAG, "frame_desc->wWidth=%d", frame_desc->wWidth);
 			ESP_LOGI(TAG, "frame_desc->wHeight=%d", frame_desc->wHeight);
 			ESP_LOGI(TAG, "format_desc->bDescriptorSubtype=%d", format_desc->bDescriptorSubtype);
-			ESP_LOGI(TAG, "frame_desc->dwDefaultFrameInterval=%d", frame_desc->dwDefaultFrameInterval);
+			ESP_LOGI(TAG, "frame_desc->dwDefaultFrameInterval=%lu", frame_desc->dwDefaultFrameInterval);
 			if (format_desc->bDescriptorSubtype == UVC_VS_FORMAT_UNCOMPRESSED) { // Logitech C270/C270N
 				ESP_LOGI(TAG, "format_desc->bDescriptorSubtype == UVC_VS_FORMAT_UNCOMPRESSED");
 				width = frame_desc->wWidth;
@@ -323,10 +323,10 @@ void usb_camera(void *pvParameters) {
 		format = UVC_FRAME_FORMAT_MJPEG;
 #endif
 
-		ESP_LOGI(TAG, "format=%d width=%d height=%d fps=%d", format, width, height, fps);
 
 		// Negotiate stream profile
 		int retry = 0;
+		ESP_LOGI(TAG, "format=%d width=%d height=%d fps=%d", format, width, height, fps);
 		//res = uvc_get_stream_ctrl_format_size(devh, &ctrl, FORMAT, WIDTH, HEIGHT, FPS_30 );
 		res = uvc_get_stream_ctrl_format_size(devh, &ctrl, format, width, height, fps );
 		while (res != UVC_SUCCESS) {
