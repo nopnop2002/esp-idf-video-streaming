@@ -5,3 +5,7 @@ dependencies:
   mdns:
     rules:
       - if: "idf_version >= 5.0"
+  esp_jpeg:
+    version: "^1.0.2"
+    rules:
+      - if: "idf_version >=5.0"

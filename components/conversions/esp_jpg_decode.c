@@ -13,32 +13,27 @@
 // limitations under the License.
 #include "esp_jpg_decode.h"
 
-#include "esp_system.h"
-#if ESP_IDF_VERSION_MAJOR >= 4 // IDF 4+
-#if CONFIG_IDF_TARGET_ESP32 // ESP32/PICO-D4
-#include "esp32/rom/tjpgd.h"
-#elif CONFIG_IDF_TARGET_ESP32S2
-#include "tjpgd.h"
-#elif CONFIG_IDF_TARGET_ESP32S3
-#include "esp32s3/rom/tjpgd.h"
-#elif CONFIG_IDF_TARGET_ESP32C3
-#include "esp32c3/rom/tjpgd.h"
-#elif CONFIG_IDF_TARGET_ESP32H2
-#include "esp32h2/rom/tjpgd.h"
-#else
-#error Target CONFIG_IDF_TARGET is not supported
-#endif
-#else // ESP32 Before IDF 4.0
+#include "esp_rom_caps.h"
+
+#if CONFIG_JD_USE_ROM
+/* When supported in ROM, use ROM functions */
+#if defined(ESP_ROM_HAS_JPEG_DECODE)
 #include "rom/tjpgd.h"
+/* The ROM code of TJPGD is older and has different return type in decode callback */
+typedef unsigned int jpeg_decode_out_t;
+#else
+#error Using JPEG decoder from ROM is not supported for selected target. Please select external code in menuconfig.
 #endif
 
-#if defined(ARDUINO_ARCH_ESP32) && defined(CONFIG_ARDUHAL_ESP_LOG)
-#include "esp32-hal-log.h"
-#define TAG ""
+/* use EXTRA functions */
 #else
+#include "tjpgd.h"
+/* The TJPGD outside the ROM code is newer and has different return type in decode callback */
+typedef int jpeg_decode_out_t;
+#endif
+
 #include "esp_log.h"
 static const char* TAG = "esp_jpg_decode";
-#endif
 
 typedef struct {
         jpg_scale_t scale;
@@ -61,7 +56,10 @@ static const char * jd_errors[] = {
     "Not supported JPEG standard"
 };
 
-static unsigned int _jpg_write(JDEC *decoder, void *bitmap, JRECT *rect)
+//static unsigned int _jpg_write(JDEC *decoder, void *bitmap, JRECT *rect)
+//rom tjpgd defined as unsigned int
+//external tjpgd defined as int
+static jpeg_decode_out_t _jpg_write(JDEC *decoder, void *bitmap, JRECT *rect)
 {
     uint16_t x = rect->left;
     uint16_t y = rect->top;
