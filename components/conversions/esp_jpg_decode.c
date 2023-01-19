@@ -13,7 +13,25 @@
 // limitations under the License.
 #include "esp_jpg_decode.h"
 
-#include "tjpgd.h" // Use EXTRA functions instead of ROM functions
+#include "esp_rom_caps.h"
+
+#if CONFIG_JD_USE_ROM
+/* When supported in ROM, use ROM functions */
+#if defined(ESP_ROM_HAS_JPEG_DECODE)
+#include "rom/tjpgd.h"
+/* The ROM code of TJPGD is older and has different return type in decode callback */
+typedef unsigned int jpeg_decode_out_t;
+#else
+#error Using JPEG decoder from ROM is not supported for selected target. Please select external code in menuconfig.
+#endif
+
+/* use EXTRA functions */
+#else
+#include "tjpgd.h"
+/* The TJPGD outside the ROM code is newer and has different return type in decode callback */
+typedef int jpeg_decode_out_t;
+#endif
+
 #include "esp_log.h"
 static const char* TAG = "esp_jpg_decode";
 
@@ -39,7 +57,7 @@ static const char * jd_errors[] = {
 };
 
 //static unsigned int _jpg_write(JDEC *decoder, void *bitmap, JRECT *rect)
-static int _jpg_write(JDEC *decoder, void *bitmap, JRECT *rect)
+static jpeg_decode_out_t _jpg_write(JDEC *decoder, void *bitmap, JRECT *rect)
 {
     uint16_t x = rect->left;
     uint16_t y = rect->top;
