@@ -123,27 +123,6 @@ You can use mDNS instead of ESP32 IP addresses.
 
 # Using ESP32-CAM development board
 You can use [this](https://github.com/espressif/esp-iot-solution/tree/master/examples/camera/video_stream_server) repository.
-But very slow.   
-It takes about 40 ticks (0.4 seconds) to get one frame of 320x240. About 2.5fps.
-```
-I (16026) MAIN: fb->len=7829
-I (16056) MAIN: fb->len=6271
-I (16096) MAIN: fb->len=6271
-I (16136) MAIN: fb->len=6114
-I (16176) MAIN: fb->len=6522
-I (16406) MAIN: fb->len=6566
-```
-
-It takes about 80 ticks (0.8 seconds) to get one frame of 640x320. About 1.25fps.
-```
-I (10526) MAIN: fb->len=23540
-I (10576) MAIN: fb->len=19717
-I (10656) MAIN: fb->len=19561
-I (10736) MAIN: fb->len=19426
-I (10816) MAIN: fb->len=19571
-I (11256) MAIN: fb->len=19531
-```
-
 
 # References
 https://github.com/nopnop2002/esp-idf-video-snapshot
