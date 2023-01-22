@@ -116,6 +116,12 @@ Some cameras need to change frame size, frame rate and frame format.
 You can use mDNS instead of ESP32 IP addresses.   
 ![WebStreaming](https://user-images.githubusercontent.com/6020549/193183519-04e5f68d-20bf-4f82-8455-a857190ccd1b.jpg)
 
+- Streaming example
+Some cameras have Auto Focus available.   
+![sample-1](https://user-images.githubusercontent.com/6020549/213895050-ae63bf80-dbaf-4631-8ed0-b9be53daee37.jpg)
+![sample-2](https://user-images.githubusercontent.com/6020549/213895051-59632bec-04f7-4543-be0e-d59f0d48b392.jpg)
+![sample-3](https://user-images.githubusercontent.com/6020549/213895052-08cdaf4f-bb91-4528-8b21-3a234a51ee7b.jpg)
+
 # Limitations
 - At 320x240, 30FPS is the maximum rate.
 - At 640x480, 15FPS is the maximum rate.
