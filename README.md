@@ -122,8 +122,8 @@ You can use mDNS instead of ESP32 IP addresses.
 ![sample-3](https://user-images.githubusercontent.com/6020549/213895052-08cdaf4f-bb91-4528-8b21-3a234a51ee7b.jpg)
 
 # Limitations
-- At 320x240, 30FPS is the maximum rate.
-- At 640x480, 15FPS is the maximum rate.
+- At 320x240, 30FPS is the maximum rate regardless of camera capabilities.
+- At 640x480, 15FPS is the maximum rate regardless of camera capabilities.
 
 
 # Using ESP32-CAM development board
