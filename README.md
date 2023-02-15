@@ -31,6 +31,10 @@ ESP module without external PSRAM will fail to initialize.
 I used this board.   
 ![esp32-s3-1](https://user-images.githubusercontent.com/6020549/193182915-ac4dbd55-b3ee-4327-b64d-d055e3774b7d.JPG)
 
+__Note for ESP32S2__   
+In earlier versions of the ESP32-S2 chip, USB transfers can cause SPI data contamination (esp32s2>=ECO1 and esp32s3 do not have this bug).   
+Software workaround is [here](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/usb/usb_stream.html#usb-stream-user-guide).   
+
 ## Stable power supply
 USB cameras consume a lot of electricity.   
 If the power supplied to the USB port is insufficient, the camera will not operate and ESP32 resets.  
