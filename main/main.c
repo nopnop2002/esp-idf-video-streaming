@@ -30,7 +30,7 @@
 static const char *TAG = "example";
 
 #if 0
-#define USB_DISCONNECT_PIN  GPIO_NUM_0
+#define USB_DISCONNECT_PIN	GPIO_NUM_0
 #endif
 
 #define FPS_15 15
@@ -44,13 +44,13 @@ static const char *TAG = "example";
 #define VID 0
 #define SERIAL_NUMBER NULL
 
-#define UVC_CHECK(exp) do {                 \
-    uvc_error_t _err_ = (exp);              \
-    if(_err_ < 0) {                         \
-        ESP_LOGE(TAG, "UVC error: %s",      \
-                 uvc_error_string(_err_));  \
-        assert(0);                          \
-    }                                       \
+#define UVC_CHECK(exp) do {					\
+	uvc_error_t _err_ = (exp);				\
+	if(_err_ < 0) {							\
+		ESP_LOGE(TAG, "UVC error: %s",		\
+				 uvc_error_string(_err_));	\
+		assert(0);							\
+	}										\
 } while(0)
 
 static SemaphoreHandle_t ready_to_uninstall_usb;
@@ -187,59 +187,59 @@ void initialise_mdns(void)
 // Handles common USB host library events
 static void usb_lib_handler_task(void *args)
 {
-    while (1) {
-        uint32_t event_flags;
-        usb_host_lib_handle_events(portMAX_DELAY, &event_flags);
-        // Release devices once all clients has deregistered
-        if (event_flags & USB_HOST_LIB_EVENT_FLAGS_NO_CLIENTS) {
-            usb_host_device_free_all();
-        }
-        // Give ready_to_uninstall_usb semaphore to indicate that USB Host library
-        // can be deinitialized, and terminate this task.
-        if (event_flags & USB_HOST_LIB_EVENT_FLAGS_ALL_FREE) {
-            xSemaphoreGive(ready_to_uninstall_usb);
-        }
-    }
+	while (1) {
+		uint32_t event_flags;
+		usb_host_lib_handle_events(portMAX_DELAY, &event_flags);
+		// Release devices once all clients has deregistered
+		if (event_flags & USB_HOST_LIB_EVENT_FLAGS_NO_CLIENTS) {
+			usb_host_device_free_all();
+		}
+		// Give ready_to_uninstall_usb semaphore to indicate that USB Host library
+		// can be deinitialized, and terminate this task.
+		if (event_flags & USB_HOST_LIB_EVENT_FLAGS_ALL_FREE) {
+			xSemaphoreGive(ready_to_uninstall_usb);
+		}
+	}
 
-    vTaskDelete(NULL);
+	vTaskDelete(NULL);
 }
 
 static esp_err_t initialize_usb_host_lib(void)
 {
-    TaskHandle_t task_handle = NULL;
+	TaskHandle_t task_handle = NULL;
 
-    const usb_host_config_t host_config = {
-        .intr_flags = ESP_INTR_FLAG_LEVEL1
-    };
+	const usb_host_config_t host_config = {
+		.intr_flags = ESP_INTR_FLAG_LEVEL1
+	};
 
-    esp_err_t err = usb_host_install(&host_config);
-    if (err != ESP_OK) {
-        return err;
-    }
+	esp_err_t err = usb_host_install(&host_config);
+	if (err != ESP_OK) {
+		return err;
+	}
 
-    ready_to_uninstall_usb = xSemaphoreCreateBinary();
-    if (ready_to_uninstall_usb == NULL) {
-        usb_host_uninstall();
-        return ESP_ERR_NO_MEM;
-    }
+	ready_to_uninstall_usb = xSemaphoreCreateBinary();
+	if (ready_to_uninstall_usb == NULL) {
+		usb_host_uninstall();
+		return ESP_ERR_NO_MEM;
+	}
 
-    if (xTaskCreate(usb_lib_handler_task, "usb_events", 4096, NULL, 2, &task_handle) != pdPASS) {
-        vSemaphoreDelete(ready_to_uninstall_usb);
-        usb_host_uninstall();
-        return ESP_ERR_NO_MEM;
-    }
+	if (xTaskCreate(usb_lib_handler_task, "usb_events", 4096, NULL, 2, &task_handle) != pdPASS) {
+		vSemaphoreDelete(ready_to_uninstall_usb);
+		usb_host_uninstall();
+		return ESP_ERR_NO_MEM;
+	}
 
-    return ESP_OK;
+	return ESP_OK;
 }
 
 static void uninitialize_usb_host_lib(void)
 {
-    xSemaphoreTake(ready_to_uninstall_usb, portMAX_DELAY);
-    vSemaphoreDelete(ready_to_uninstall_usb);
+	xSemaphoreTake(ready_to_uninstall_usb, portMAX_DELAY);
+	vSemaphoreDelete(ready_to_uninstall_usb);
 
-    if ( usb_host_uninstall() != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to uninstall usb_host");
-    }
+	if ( usb_host_uninstall() != ESP_OK) {
+		ESP_LOGE(TAG, "Failed to uninstall usb_host");
+	}
 }
 
 static void displayBuffer(uint8_t * buf, int buf_len, bool flag) {
@@ -304,17 +304,17 @@ void frame_callback(uvc_frame_t *frame, void *ptr)
 
 void button_callback(int button, int state, void *user_ptr)
 {
-    printf("button %d state %d\n", button, state);
+	printf("button %d state %d\n", button, state);
 }
 
 static void libuvc_adapter_cb(libuvc_adapter_event_t event)
 {
-    xEventGroupSetBits(app_flags, event);
+	xEventGroupSetBits(app_flags, event);
 }
 
 static EventBits_t wait_for_event(EventBits_t event)
 {
-    return xEventGroupWaitBits(app_flags, event, pdTRUE, pdFALSE, portMAX_DELAY) & event;
+	return xEventGroupWaitBits(app_flags, event, pdTRUE, pdFALSE, portMAX_DELAY) & event;
 }
 
 static void camera_not_available(char *message) {
@@ -354,50 +354,45 @@ int app_main(int argc, char **argv)
 	xTaskCreate(http_server, "HTTP", 1024*6, (void *)cparam0, 2, NULL);
 	vTaskDelay(100);
 
+	uvc_context_t *ctx;
+	uvc_device_t *dev;
+	uvc_device_handle_t *devh;
+	uvc_stream_ctrl_t ctrl;
+	uvc_error_t res;
 
+	app_flags = xEventGroupCreate();
+	assert(app_flags);
 
+	ESP_ERROR_CHECK( initialize_usb_host_lib() );
 
+	libuvc_adapter_config_t config = {
+		.create_background_task = true,
+		.task_priority = 5,
+		.stack_size = 4096,
+		.callback = libuvc_adapter_cb
+	};
 
+	libuvc_adapter_set_config(&config);
 
-    uvc_context_t *ctx;
-    uvc_device_t *dev;
-    uvc_device_handle_t *devh;
-    uvc_stream_ctrl_t ctrl;
-    uvc_error_t res;
-
-    app_flags = xEventGroupCreate();
-    assert(app_flags);
-
-    ESP_ERROR_CHECK( initialize_usb_host_lib() );
-
-    libuvc_adapter_config_t config = {
-        .create_background_task = true,
-        .task_priority = 5,
-        .stack_size = 4096,
-        .callback = libuvc_adapter_cb
-    };
-
-    libuvc_adapter_set_config(&config);
-
-    UVC_CHECK( uvc_init(&ctx, NULL) );
+	UVC_CHECK( uvc_init(&ctx, NULL) );
 
 	while(1) {
 
-        printf("Waiting for device\n");
-        wait_for_event(UVC_DEVICE_CONNECTED);
+		printf("Waiting for device\n");
+		wait_for_event(UVC_DEVICE_CONNECTED);
 
-        UVC_CHECK( uvc_find_device(ctx, &dev, PID, VID, SERIAL_NUMBER) );
-        puts("Device found");
+		UVC_CHECK( uvc_find_device(ctx, &dev, PID, VID, SERIAL_NUMBER) );
+		puts("Device found");
 
-        UVC_CHECK( uvc_open(dev, &devh) );
+		UVC_CHECK( uvc_open(dev, &devh) );
 
-        // Uncomment to print configuration descriptor
-        // libuvc_adapter_print_descriptors(devh);
+		// Uncomment to print configuration descriptor
+		// libuvc_adapter_print_descriptors(devh);
 
-        uvc_set_button_callback(devh, button_callback, NULL);
+		uvc_set_button_callback(devh, button_callback, NULL);
 
-        // Print known device information
-        uvc_print_diag(devh, stderr);
+		// Print known device information
+		uvc_print_diag(devh, stderr);
 
 		// Set default setting
 		int fps = FPS_30;
@@ -496,33 +491,33 @@ int app_main(int argc, char **argv)
 			}
 		}
 
-        // dwMaxPayloadTransferSize has to be overwritten to MPS (maximum packet size)
-        // supported by ESP32-S2(S3), as libuvc selects the highest possible MPS by default.
-        ctrl.dwMaxPayloadTransferSize = 512;
+		// dwMaxPayloadTransferSize has to be overwritten to MPS (maximum packet size)
+		// supported by ESP32-S2(S3), as libuvc selects the highest possible MPS by default.
+		ctrl.dwMaxPayloadTransferSize = 512;
 
-        uvc_print_stream_ctrl(&ctrl, stderr);
+		uvc_print_stream_ctrl(&ctrl, stderr);
 
-        //UVC_CHECK( uvc_start_streaming(devh, &ctrl, frame_callback, NULL, 0) );
+		//UVC_CHECK( uvc_start_streaming(devh, &ctrl, frame_callback, NULL, 0) );
 		res = uvc_start_streaming(devh, &ctrl, frame_callback, NULL, 0);
 		ESP_LOGI(TAG, "uvc_start_streaming=%d", res);
 		if (res != 0) {
 			camera_not_available("uvc_start_streaming fail");
 		}
-        puts("Streaming...");
+		puts("Streaming...");
 
-        wait_for_event(UVC_DEVICE_DISCONNECTED);
+		wait_for_event(UVC_DEVICE_DISCONNECTED);
 
-        uvc_stop_streaming(devh);
-        puts("Done streaming.");
+		uvc_stop_streaming(devh);
+		puts("Done streaming.");
 
-        uvc_close(devh);
+		uvc_close(devh);
 
-    }
+	}
 
 	// Never reach here
-    uvc_exit(ctx);
-    puts("UVC exited");
+	uvc_exit(ctx);
+	puts("UVC exited");
 
-    uninitialize_usb_host_lib();
+	uninitialize_usb_host_lib();
 	vTaskDelete(NULL);
 }
