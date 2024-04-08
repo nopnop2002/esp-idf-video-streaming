@@ -47,7 +47,7 @@ Breakout boards are available from AliExpress or eBay.
 From what I've researched, ESP-IDF has limited USB support.   
 For example, the Logitech C615 works with Linux, but not with ESP-IDF.   
 I tested with these cameras.   
-- Logitech C270 -> Success   
+- Logitech C270n -> Success   
 - Logitech C615 -> Fail  
 - Logitech QuickCam Pro 9000 -> Fail   
 - PAPALOOK AF925 -> Fail   
