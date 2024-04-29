@@ -20,7 +20,7 @@ I based it on [this](https://github.com/espressif/esp-idf/tree/master/examples/p
  This will allow you to use Logitech C270n and Microsoft LifeCam.   
  Conversion from UVC_FRAME_FORMAT_YUYV to JPEG used [this](https://github.com/espressif/esp32-camera/blob/master/conversions/to_jpg.cpp).   
 
-- Change from TCP transmission to HTTP transmission.   
+- Changed from TCP transmission to HTTP transmission.   
  I base it on [this](https://github.com/espressif/esp-iot-solution/tree/master/examples/camera/video_stream_server).   
 
 # Hardware Required
