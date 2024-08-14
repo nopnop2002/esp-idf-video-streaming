@@ -33,7 +33,7 @@ I used this board.
 
 __Note for ESP32S2__   
 In earlier versions of the ESP32-S2 chip, USB transfers can cause SPI data contamination (esp32s2>=ECO1 and esp32s3 do not have this bug).   
-Software workaround is [here](https://docs.espressif.com/projects/espressif-esp-iot-solution/en/latest/usb/usb_stream.html#usb-stream-user-guide).   
+Software workaround is [here](https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_host/usb_stream.html).   
 
 ## Stable power supply
 USB cameras consume a lot of electricity.   
