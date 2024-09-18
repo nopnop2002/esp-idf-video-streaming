@@ -70,8 +70,8 @@ Detail is [here](https://github.com/nopnop2002/esp-idf-video-streaming/issues).
 ![cameras](https://user-images.githubusercontent.com/6020549/195963953-2fd44723-1ef6-4ece-84c3-412f9ca1497c.JPG)
 
 # Software Required
-esp-idf v5.0 or later.   
-A compilation error occurs in ESP-IDF Ver4.   
+ESP-IDF V5.0 or later.   
+ESP-IDF V4.4 release branch reached EOL in July 2024.   
 
 # Wireing   
 ```
