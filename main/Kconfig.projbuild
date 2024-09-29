@@ -72,6 +72,7 @@ menu "Application Configuration"
 
 	config FRAME_RATE
 		int "Frame Rate"
+		depends on MANUAL_SETTING
 		depends on SIZE_640x480
 		range 0 15
 		default 15
@@ -80,6 +81,7 @@ menu "Application Configuration"
 
 	config FRAME_RATE
 		int "Frame Rate"
+		depends on MANUAL_SETTING
 		depends on !SIZE_640x480
 		range 0 30
 		default 30
