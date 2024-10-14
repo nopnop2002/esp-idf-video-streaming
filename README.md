@@ -77,6 +77,8 @@ ESP-IDF V4.4 release branch reached EOL in July 2024.
 
 # Wireing   
 USB camera connects via USB connector.   
+The USB port on the ESP32 development board does not function as a USB-HOST.   
+
 ```
 +---------+  +-------------+  +----------+
 |ESP BOARD|==|USB CONNECTOR|==|USB CAMERA|
