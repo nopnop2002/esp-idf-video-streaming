@@ -40,7 +40,7 @@ USB cameras consume a lot of electricity.
 If the power supplied to the USB port is insufficient, the camera will not operate and ESP32 resets.  
 
 ## USB Type-A Femail connector
-Breakout boards are available from AliExpress or eBay.   
+USB connectors are available from AliExpress or eBay.   
 I used this.   
 ![USBConnector](https://github.com/user-attachments/assets/8d7d8f0a-d289-44b8-ae90-c693a1099ca0)
 
