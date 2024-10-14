@@ -93,6 +93,7 @@ GND       -------------> | || GND
                          +--+
 ```
 
+![USBConnector-2](https://github.com/user-attachments/assets/b5ae9a94-175c-46c7-a9a8-6be527cdd56e)
 
 # Installation
 ```
