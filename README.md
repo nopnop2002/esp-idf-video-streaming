@@ -41,7 +41,7 @@ If the power supplied to the USB port is insufficient, the camera will not opera
 
 ## USB Type-A Femail connector
 USB connectors are available from AliExpress or eBay.   
-I used this.   
+I used it by incorporating it into a Universal PCB.   
 ![USBConnector](https://github.com/user-attachments/assets/8d7d8f0a-d289-44b8-ae90-c693a1099ca0)
 
 ## USB camera with UVC support
