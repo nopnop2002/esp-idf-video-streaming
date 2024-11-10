@@ -60,6 +60,7 @@ I tested with these cameras.
 - Microsoft LifeCam Studio -> Success   
 - Microsoft LifeCam HD3000 -> Success   
 - Microsoft LifeCam HD5000 -> Success   
+- Microsoft LifeCam HD6000 for Notebooks -> Success   
 
 ___It is very hard to find a camera that works with ESP-IDF.___   
 On [this](https://components.espressif.com/components/espressif/usb_host_uvc) document says that these cameras work with ESP-IDF.   
