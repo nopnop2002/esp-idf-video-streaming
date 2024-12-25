@@ -44,6 +44,10 @@ USB connectors are available from AliExpress or eBay.
 I used it by incorporating it into a Universal PCB.   
 ![USBConnector](https://github.com/user-attachments/assets/8d7d8f0a-d289-44b8-ae90-c693a1099ca0)
 
+We can buy this breakout on Ebay or AliExpress.   
+![usb-conector-11](https://github.com/user-attachments/assets/848998d4-fb0c-4b4f-97ae-0b3ae8b8996a)
+![usb-conector-12](https://github.com/user-attachments/assets/6fc34dcf-0b13-4233-8c71-07234e8c6d06)
+
 ## USB camera with UVC support
 [Here](https://www.freebsd.org/cgi/man.cgi?query=uvc&sektion=4&manpath=freebsd-release-ports) is a list of USB cameras that support UVC that work with FreeBSD.   
 From what I've researched, ESP-IDF has limited USB support.   
