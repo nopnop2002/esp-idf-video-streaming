@@ -27,7 +27,7 @@
 #include "img_converters.h"
 
 
-static const char *TAG = "example";
+static const char *TAG = "MAIN";
 
 #if 0
 #define USB_DISCONNECT_PIN	GPIO_NUM_0
