@@ -72,7 +72,7 @@ On [this](https://components.espressif.com/components/espressif/usb_host_uvc) do
 - Logitech C980
 - CANYON CNE-CWC2
 
-When usb support provided by ESP-IDF is updated, this issue may eliminate the problem.   
+This issue may be resolved when the USB Host UVC class driver provided by ESP-IDF is updated.   
 Detail is [here](https://github.com/nopnop2002/esp-idf-video-streaming/issues).   
 
 ![cameras](https://user-images.githubusercontent.com/6020549/195963953-2fd44723-1ef6-4ece-84c3-412f9ca1497c.JPG)
