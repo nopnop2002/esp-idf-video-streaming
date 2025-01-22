@@ -57,7 +57,6 @@ I tested with these cameras.
 - Logitech C270n -> Success   
 - Logitech C615 -> Fail  
 - Logitech QuickCam Pro 9000 -> Success   
-- PAPALOOK AF925 -> Fail   
 - Microdia(Very old model) -> Success   
 - Microdia MSI Starcam Racer -> Success   
 - Microsoft LifeCam NX6000 -> Fail   
