@@ -3,8 +3,8 @@ libuvc example for linux.
 
 # Installation
 ```
-sudo apt-get install libusb-1.0-0-dev
-sudo apt-get install libjpeg-dev
+sudo apt install libusb-1.0-0-dev
+sudo apt install libjpeg-dev
 
 git clone https://github.com/libuvc/libuvc
 cd libuvc
