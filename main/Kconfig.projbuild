@@ -47,7 +47,11 @@ menu "Application Configuration"
 		config SIZE_320x240
 			bool "320x240"
 			help
-				320x640.
+				320x240.
+		config SIZE_176x144
+			bool "176x144"
+			help
+				176x144.
 		config SIZE_160x120
 			bool "160x120"
 			help
